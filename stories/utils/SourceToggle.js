@@ -25,12 +25,14 @@ export default class SourceToggle extends React.Component {
         switch (source) {
             case sources.HTML:
                 return <div className={classname} dangerouslySetInnerHTML={{__html: html}} />
+            case sources.Angular2:
+                return <div className={classname}>{angular2}</div>      
             case sources.React:
             default:
                 return <div className={classname}>{jsx}</div>
         }
     }
-
+            
     renderMarkdown() {
         let {jsx, html, angular2} = this.props;
         let {source} = this.state;

@@ -8,7 +8,10 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src/react -d lib/react && babel src/index.js -o lib/index.js && node-sass --include-path scss scss/style.scss css/style.css && node build-demo.js",
+    "build-typescript": "tsc -p tsconfig.json",
+    "build-scss": "node-sass --include-path scss scss/style.scss css/style.css",
+    "build-react": "babel src/react -d lib/react && babel src/index.js -o lib/index.js",
+    "build": "npm run build-typescript && npm run build-react && npm run build-scss && node build-demo.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o .out"
   },
@@ -37,10 +40,16 @@
     "node-sass": "^4.5.2",
     "prismjs": "^1.6.0",
     "sass-loader": "^6.0.3",
-    "style-loader": "^0.16.1"
+    "style-loader": "^0.16.1",
+    "typescript": "~2.0.10",
+    "@types/node": "^6.0.48"
   },
   "dependencies": {
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "@angular/common": "~2.2.1",
+    "@angular/compiler": "~2.2.1",
+    "@angular/core": "~2.2.1",
+    "rxjs": "5.0.0-beta.12"
   }
 }
