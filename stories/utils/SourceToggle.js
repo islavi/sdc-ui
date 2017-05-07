@@ -26,7 +26,6 @@ export default class SourceToggle extends React.Component {
             case sources.HTML:
                 return <div className={classname} dangerouslySetInnerHTML={{__html: html}} />
             case sources.Angular2:
-                return <div className={classname}>{angular2}</div>      
             case sources.React:
             default:
                 return <div className={classname}>{jsx}</div>
@@ -39,7 +38,7 @@ export default class SourceToggle extends React.Component {
         switch (source) {
             case sources.HTML:
             case sources.Angular2:
-                return {__html: Prism.highlight(html, Prism.languages.html)};
+                return {__html: Prism.highlight(angular2, Prism.languages.html)};
             case sources.React:
             default:
                 return {__html: Prism.highlight(jsxToString(jsx), Prism.languages.jsx)};

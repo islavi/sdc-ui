@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-typescript": "tsc -p tsconfig.json",
+    "build-typescript": "node_modules/.bin/tsc -p tsconfig.json",
     "build-scss": "node-sass --include-path scss scss/style.scss css/style.css",
     "build-react": "babel src/react -d lib/react && babel src/index.js -o lib/index.js",
     "build": "npm run build-typescript && npm run build-react && npm run build-scss && node build-demo.js",
@@ -45,11 +45,24 @@
     "@types/node": "^6.0.48"
   },
   "dependencies": {
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
     "@angular/common": "~2.2.1",
     "@angular/compiler": "~2.2.1",
+    "@angular/compiler-cli": "~2.2.1",
     "@angular/core": "~2.2.1",
-    "rxjs": "5.0.0-beta.12"
+    "@angular/forms": "~2.2.1",
+    "@angular/http": "~2.2.1",
+    "@angular/platform-browser": "~2.2.1",
+    "@angular/platform-browser-dynamic": "~2.2.1",
+    "@angular/platform-server": "~2.2.1",
+    "@angular/router": "~3.2.1",
+    "@angular/upgrade": "~2.2.1",
+    "@types/node": "^6.0.48",
+    "core-js": "^2.4.1",
+    "ie-shim": "^0.1.0",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "5.0.0-beta.12",
+    "zone.js": "~0.6.26",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
   }
 }

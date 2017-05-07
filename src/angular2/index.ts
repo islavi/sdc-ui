@@ -1,7 +1,7 @@
-import SdcButton from './Button';
+import Button from './Button';
 
-export {SdcButton};
+export {Button};
 
 export default {
-  SdcButton
+  Button
 }
