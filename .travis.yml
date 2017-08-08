@@ -5,24 +5,4 @@ install: npm install
 script:
 - npm test
 - npm run build
-deploy:
-  - provider: npm
-    email: onap.sdc@gmail.com
-    api_key: $NPM_TOKEN
-    on:
-      tags: true
-      repo: onap-sdc/sdc-ui
-  - provider: pages
-    repo: onap-sdc/sdc-ui
-    skip_cleanup: true
-    github_token: $GITHUB_TOKEN
-    local_dir: .out
-    on:
-      branch: master
-  - provider: pages
-    skip_cleanup: true
-    github_token: $GITHUB_TOKEN
-    local_dir: .out
-    on:
-      all_branches: true
-      condition: $DEPLOY = 1
+
