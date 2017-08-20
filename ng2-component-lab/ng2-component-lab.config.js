@@ -1,3 +1,4 @@
+console.log("Inside the file");
 var getWebPackConfig = require('../ng2-component-lab.webpack.config.js');
 
 module.exports = {
