@@ -19,7 +19,7 @@
     "lab": "ng2-component-lab --config ng2-component-lab/ng2-component-lab.config.js -- feature",
     "tree": "tree --fullpath -a -l 2",
     "build-labaa": "npm run tree && ng2-component-lab --config ng2-component-lab/ng2-component-lab.config.js --build -- feature",
-    "build-lab": "node ng2-component-lab/ng2-component-lab.config.js",
+    "build-lab": "npm run tree && node ng2-component-lab/ng2-component-lab.config.js",
     "build-gh-pages": "npm run build-storybook && npm run build-lab && npm run && ncp utils/index-for-gh-pages.html .out/index.html"
   },
   "repository": {
