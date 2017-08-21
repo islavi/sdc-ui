@@ -17,9 +17,9 @@
     "storybook": "npm run build-icons && start-storybook -p 6006",
     "build-storybook": "npm run build-icons && build-storybook -c .storybook -o .out/react",
     "lab": "npm-test --config ng2-component-lab/ng2-component-lab.config.js -- feature",
-    "tree": "tree --fullpath -a -l 2",
+    "tree": "tree node_modules/@islavi --fullpath -a -l 3",
     "build-lab-orig": "npm-test --config ng2-component-lab/ng2-component-lab.config.js --build -- feature",
-    "build-lab": "npm-test",
+    "build-lab": "npm run tree && npm-test",
     "build-gh-pages": "npm run build-storybook && npm run build-lab && npm run && ncp utils/index-for-gh-pages.html .out/index.html"
   },
   "repository": {
