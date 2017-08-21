@@ -1,5 +1,5 @@
 import './ng2-component-lab.scss';
-import { createLab } from '@islavi/ng2-component-lab';
+import { createLab } from '@islavi/npm-test';
 import { ComponentsModule } from './../stories/ng2-component-lab/components.module';
 
 createLab({
