@@ -6,6 +6,7 @@ script:
 - npm test
 - npm run build
 - npm run build-storybook
+- npm run build-lab
 deploy:
   - provider: npm
     email: onap.sdc@gmail.com
