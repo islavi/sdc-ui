@@ -1,4 +1,4 @@
-import { Component, Input} from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { ButtonComponent } from "../buttons/button.component";
 import { ModalService } from "./modal.service";
 
@@ -7,18 +7,18 @@ import { ModalService } from "./modal.service";
     templateUrl: "./modal-button.component.html"
 })
 export class ModalButtonComponent extends ButtonComponent {
-    @Input() public callback: Function; 
+    @Input() public callback: () => void;
     @Input() public closeModal: boolean = false;
-    
-    constructor(private modalService:ModalService){
+
+    constructor(private modalService: ModalService) {
         super();
     }
 
-    public invokeCallback = ():void => {
-        if(this.callback){
+    public invokeCallback = (): void => {
+        if (this.callback) {
             this.callback();
         }
-        if(this.closeModal){
+        if (this.closeModal) {
             this.modalService.closeModal();
         }
     }

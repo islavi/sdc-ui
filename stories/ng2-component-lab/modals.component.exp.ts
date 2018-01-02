@@ -3,7 +3,7 @@
  */
 import {experimentOn} from '@islavi/ng2-component-lab';
 
-const sourceStyles:string =`
+const sourceStyles: string = `
     .example-source {
       background: #eeeeee;
       padding: 10px;
@@ -28,39 +28,39 @@ const sourceStyles:string =`
 `;
 
 export default experimentOn('Modals')
-    .group("Modals",[
-      {        
+    .group("Modals", [
+      {
         id: 'standardModal',
         showSource: false,
         title: 'Standard modal',
         description: 'Opens a modal with a custom title, message, and confirm button with a callback.',
         template: `
-        <modal-consumer [action]="'openActionModal'"></modal-consumer> 
+        <modal-consumer [action]="'openActionModal'"></modal-consumer>
         <div class="example-source">Source Code:
         <pre>
 
           this.modalService.openActionModal('Standard Modal', 'Do you want to continue?', "Yes", this.onConfirmAction);
-          
+
           private onConfirmAction = ():void => {{ '{' }}
             alert("Action has been confirmed");
-          {{ '}' }};  
+          {{ '}' }};
         </pre></div>`,
         styles: [sourceStyles]
-      },       
-      {        
+      },
+      {
         id: 'alertModal',
         showSource: false,
-        title: 'Alert modal', 
+        title: 'Alert modal',
         description: 'Opens a standard alert modal with a custom title and message.',
         template: `
-        <modal-consumer [action]="'openAlertModal'"></modal-consumer> 
+        <modal-consumer [action]="'openAlertModal'"></modal-consumer>
         <div class="example-source">Source Code:
         <pre>
 
           this.modalService.openAlertModal("Alert Title", "An alert message.");
         </pre></div>`,
         styles: [sourceStyles]
-      },      
+      },
       {
         id: 'errorModal',
         showSource: false,
@@ -74,13 +74,13 @@ export default experimentOn('Modals')
         </pre></div>`,
         styles: [sourceStyles]
       },
-      {        
+      {
         id: 'customModal',
         showSource: false,
         title: 'Custom modal',
         description: 'Opens a modal with dynamic inner content and customizable title, buttons, and callbacks.',
         template: `
-        <modal-consumer [action]="'openCustomModal'"></modal-consumer> 
+        <modal-consumer [action]="'openCustomModal'"></modal-consumer>
         <div class="example-source">Source Code:
         <pre>
 
@@ -90,8 +90,8 @@ export default experimentOn('Modals')
           title: 'Title',
           type: ModalType.standard,
           buttons: [
-                    {{ '{' }}text:"Save &amp; Close", callback:this.customModalOnDone, closeModal:true{{ '}' }}, 
-                    {{ '{' }}text:"Save", callback:this.customModalOnSave, closeModal:false{{ '}' }}, 
+                    {{ '{' }}text:"Save &amp; Close", callback:this.customModalOnDone, closeModal:true{{ '}' }},
+                    {{ '{' }}text:"Save", callback:this.customModalOnSave, closeModal:false{{ '}' }},
                     {{ '{' }}text:"Cancel", closeModal:true{{ '}' }}]
             {{ '}' }};
 
@@ -102,7 +102,7 @@ export default experimentOn('Modals')
               let currentInstance:any = this.modalService.getCurrentInstance();
               alert("Save with result: " + currentInstance.innerModalContent.instance.name);
           {{ '}' }};
-      
+
           private customModalOnSave = ():void => {{ '{' }}
               let currentInstance:any = this.modalService.getCurrentInstance();
               alert("Save with result: " + currentInstance.innerModalContent.instance.name);
