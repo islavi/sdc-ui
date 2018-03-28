@@ -20,8 +20,7 @@ var webpackConfig = {
                 test: /.ts$/,
                 use: [
                     'awesome-typescript-loader',
-                    'angular2-template-loader',
-                    'angular2-router-loader'
+                    'angular2-template-loader'
                 ]
             },
             {

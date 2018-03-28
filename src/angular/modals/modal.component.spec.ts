@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Component, Input, NgModule, ViewContainerRef, Inject, Injectable, Type, ApplicationRef, ComponentFactoryResolver, ComponentRef,
+import { Component, Input, NgModule, ViewContainerRef, Inject, Injectable, Type, ComponentFactoryResolver, ComponentRef,
     EmbeddedViewRef, Injector } from '@angular/core';
 import { NO_ERRORS_SCHEMA } from '@angular/core/src/metadata/ng_module';
 import { ModalService } from './modal.service';
@@ -8,7 +8,7 @@ import {IModalConfig, ModalType, ModalSize} from "../../../src/angular/modals/mo
 import { ModalInnerContent } from "../../../stories/ng2-component-lab/components/modal-inner-content-example.component";
 
 
-describe("Modal unit-tests", () => {                                                      
+describe("Modal unit-tests", () => {
     let testService: ModalService;
     const testInputModal = {
         size: 'xl', //'xl|l|md|sm|xsm'
@@ -21,7 +21,7 @@ describe("Modal unit-tests", () => {
         TestBed.configureTestingModule({
            providers:[
                 ModalService,
-                { provide : CreateDynamicComponentService, useClass: CreateDynamicComponentServiceTest}      
+                { provide : CreateDynamicComponentService, useClass: CreateDynamicComponentServiceTest}
             ],
             declarations: [],
             schemas:[NO_ERRORS_SCHEMA]
@@ -38,20 +38,20 @@ describe("Modal unit-tests", () => {
         let modalInstance = testService.openAlertModal('testAlert', 'testMessage');
         expect(modalInstance).toBeTruthy();
     })
-    
+
     it('Modal info window test', () => {
         let modalInstance = testService.openErrorModal('testMessage');
         expect(modalInstance).toBeTruthy();
     })
 
-    
+
     it('Custom Modal should be open', () => {
         let modalConfig:IModalConfig = <IModalConfig> {
             size: ModalSize.medium,
             title: 'Title',
             type: ModalType.custom,
-            buttons: [{text:"Save & Close", callback:this.customModalOnDone, closeModal:true}, 
-                      {text:"Save", callback:this.customModalOnSave, closeModal:false}, 
+            buttons: [{text:"Save & Close", callback:this.customModalOnDone, closeModal:true},
+                      {text:"Save", callback:this.customModalOnSave, closeModal:false},
                       {text:"Cancel", type: 'secondary', closeModal:true}]
         };
         let modalInstance = testService.openCustomModal(modalConfig, ModalInnerContent, {name: "Sample Content"});
@@ -61,7 +61,7 @@ describe("Modal unit-tests", () => {
     it('Shoul close window', () => {
         let modalInstance = testService.openModal(testInputModal);
         testService.closeModal();
-        expect(modalInstance.instance.modalVisible).toBeFalsy();    
+        expect(modalInstance.instance.modalVisible).toBeFalsy();
     })
 })
 
@@ -76,12 +76,12 @@ const testModalInstance = {
         _createDynamicComponentService:{
             insertComponentDynamically:() => {
                 return true;
-            }  
+            }
         },
         modalVisible:true
     },
-   
-};    
+
+};
 
 @Component({
     selector: 'modal-test',

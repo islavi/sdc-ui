@@ -1,5 +1,5 @@
 import {
-    Component, Input, Output, ContentChildren, SimpleChanges, QueryList, EventEmitter,
+    Component, Input, Output, ContentChildren, SimpleChanges, EventEmitter,
     OnChanges, AfterContentInit
 } from '@angular/core';
 import { FormsModule } from "@angular/forms";
@@ -25,4 +25,4 @@ describe('Popup Menu', () => {
     it('Set Position to Popup Menu', () => {
         expect(component.position).toEqual({ x: 0, y: 0 })
     });
-}) 
+})

@@ -11,7 +11,7 @@ import { ViewContainerRef } from '@angular/core/src/linker/view_container_ref';
 @Injectable()
 export class CreateDynamicComponentService {
 
-    constructor(private componentFactoryResolver:ComponentFactoryResolver, 
+    constructor(private componentFactoryResolver:ComponentFactoryResolver,
         private applicationRef:ApplicationRef,  private injector:Injector) {
     }
 
@@ -23,7 +23,11 @@ export class CreateDynamicComponentService {
      * @memberOf InjectionService
      */
     private getRootViewContainer():ComponentRef<any> {
+        // Angular2
         const rootComponents = this.applicationRef['_rootComponents'];
+
+        // Angular 5
+        //const rootComponents = this.applicationRef['components'];
         if (rootComponents.length) return rootComponents[0];
 
         throw new Error('View Container not found! ngUpgrade needs to manually set this via setRootViewContainer.');

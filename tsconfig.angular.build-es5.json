@@ -19,7 +19,6 @@
     "skipMetadataEmit": false,
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
-    "flatModuleOutFile": "index.js",
     "flatModuleId": "sdc-ui"
   }
 }
